@@ -8,8 +8,12 @@
   },
   "keywords": [],
   "author": "",
+<<<<<<< HEAD
   "license": "ISC",
   "devDependencies": {
     "gh-pages": "^5.0.0"
   }
+=======
+  "license": "ISC"
+>>>>>>> a7df7c1e8525aa6a254ab9f9ec482bc71ffea567
 }
