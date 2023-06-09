@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <style>
+    :root {
+      /* Primary */
+      --soft-blue: hsl(215, 51%, 70%);
+      --cyan: hsl(178, 100%, 50%);
+
+      /*Neutral */
+      --very-dark-blue-main-BG: hsl(217, 54%, 11%);
+      --very-dark-blue-card-BG: hsl(216, 50%, 16%);
+      --very-dark-blue-line: hsl(215, 32%, 27%);
+      --white: hsl(0, 0%, 100%);
+    }
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    html {
+      font-size: 62.5%;
+      font-family: 'Outfit', sans-serif;
+    }
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--very-dark-blue-main-BG);
+    }
+    .card-component__container {
+      width: 90%;
+      max-width: 340px;
+      height: 580px;
+      padding: 22px;
+      background-color: var(--very-dark-blue-card-BG);
+      border-radius: 20px;
+    }
+    .card-image__container {
+      position: relative;
+      width: 100%;
+      height: 54%;
+      margin-bottom: 20px;
+    }
+    .card-image__container .image__container {
+      margin-bottom: 18px;
+      width: 100%;
+      height: 100%;
+    }
+    .card-image__container .image__container .eth-image {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+    .color-cyan {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;      
+      border-radius: 10px;
+      background-color: rgba(0, 255, 255, 0.5);  
+      z-index: 1;
+      opacity: 0;
+    }
+    .color-cyan:hover {  
+      opacity: 1;
+      cursor: pointer;
+      transition: 1s;
+    }
+    .card-text__container h1 {
+      margin-bottom: 16px;
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+    }
+    .card-text__container h1:hover {
+      color: var(--cyan);
+      cursor: pointer;
+    }
+    .card-text__container .card-p__container {
+      margin-bottom: 16px;
+      font-size: 1.6rem;
+      font-weight: 300;
+      line-height: 2.6rem;
+      color: var(--soft-blue);
+    }
+    .price__container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 20px;
+      margin-bottom: 14px;
+    }
+    .price__container p {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .price__container .diamond-text__container {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--cyan);
+    }
+    .price__container .time-text__container {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--soft-blue);
+    }
+    .price__container span {
+      display: inline-block;
+      margin-right: 12px;
+      width: 10px;
+      height: 16px;
+      background-image: url(./images/icon-ethereum.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .price__container .time__container {
+      width: 14px;
+      background-image: url(./images/icon-clock.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .author__container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 18%;
+      border-top: 1px solid var(--soft-blue);
+    }
+    .author__container .author-name__container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--soft-blue);
+    }
+    .author__container .author-name__container .color-text {
+      color: var(--white);
+      margin-left: 8px;
+    }
+    .author__container .author-name__container .color-text:hover {
+      color: var(--cyan);
+      cursor: pointer;
+    }
+    .author__container .author-image__profile {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      margin-right: 12px;
+      border: 1px solid white;
+      border-radius: 50%;
+      background-image: url(./images/image-avatar.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card-component__container">
+      <div class="card-image__container">
+        <figure class="image__container">
+          <img src="./images/image-equilibrium.jpg" alt="" class="eth-image">
+          <div class="color-cyan">
+            <img src="./images/icon-view.svg" alt="">
+          </div>
+        </figure>     
+      </div>
+      <div class="card-text__container">
+        <h1>Equilibrium #3429</h1>
+        <p class="card-p__container">Our Equilibrium collection promotes balance and calm.</p>
+      </div>
+      <div class="price__container">
+        <p class="diamond-text__container"><span class="diamond__container"></span>0.041ETH</p>
+        <P class="time-text__container"><span class="time__container"></span> 3 days left</P>
+      </div>
+      <div  class="author__container">
+        <p class="author-name__container"><span class="author-image__profile"></span>Creation of<span class="color-text">Jules Wyvern</span></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
